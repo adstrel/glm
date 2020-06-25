@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 cmake_policy(VERSION 3.2)
 
 
-file(READ "glm/detail/setup.hpp" GLM_SETUP_FILE)
+file(READ "include/glm/detail/setup.hpp" GLM_SETUP_FILE)
 string(REGEX MATCH "#define[ ]+GLM_VERSION_MAJOR[ ]+([0-9]+)" _ ${GLM_SETUP_FILE})
 set(GLM_VERSION_MAJOR "${CMAKE_MATCH_1}")
 string(REGEX MATCH "#define[ ]+GLM_VERSION_MINOR[ ]+([0-9]+)" _ ${GLM_SETUP_FILE})
@@ -18,7 +18,7 @@ message(STATUS "GLM: Version " ${GLM_VERSION})
 
 enable_testing()
 
-add_subdirectory(glm)
+add_subdirectory(include/glm)
 add_library(glm::glm ALIAS glm)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
