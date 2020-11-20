@@ -1,5 +1,5 @@
 project "glm"
-    kind "None"
+    kind "StaticLib"
     language "C++"
     
     files
